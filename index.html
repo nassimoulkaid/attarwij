@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATTARWIJ AGENCY</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index2.css">
+    <style>
+        .notification {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+    </style>
+
+</head>
+<body >
+    <div id="content">
+    <header>
+        <div class="brand-name">  
+            <img src="images\WhatsApp Image 2024-06-13 at 17.16.02.jpeg" alt="Logo" class="logo">  
+            <div>
+                <span class="orange">A</span>
+                <span class="blue">TTARWIJ</span>  
+                <span class="orange">A</span>
+                <span class="blue">GENCY</span>
+            </div>
+            
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home"> Accueil </a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">Travail</a></li>
+                <li><a href="#contact">Contactez-nous</a></li>
+            </ul>
+        </nav>
+        
+        <form class="search-form">
+            <input type="text" placeholder="recherche...">
+        </form>
+    </header>
+    <div class="background-container">
+        <div class="overlay">
+            <section id="home">
+            <h1><span class="orange">A</span><span class="blue">TTARWIJ</span>  <span class="orange">A</span><span class="blue">GENCY</span></h1>
+            <p> Où chaque pixel compte. Transformez votre marque en une expérience inoubliable avec nos stratégies de marketing révolutionnaires.
+               Des idées audacieuses, une exécution impeccable - découvrez comment nous redéfinissons les normes du succès numérique.</p>
+            </section>
+        </div>
+    </div>
+    <section>
+        <div class="background-container1">   
+            <div class="content">
+                <div class="text">
+                    <section id="about">
+                    <h1><b>Notre Mission</b></h1>
+                    <p><b>Attarwij Agency</b> est votre partenaire de confiance en marketing, 
+                        offrant des solutions innovantes pour propulser votre entreprise vers le succès.
+                        Avec une approche personnalisée et des stratégies ciblées, nous sommes déterminés à maximiser votre visibilité et à stimuler votre croissance.
+                        Découvrez comment notre expertise peut transformer votre présence en ligne et vous démarquer de la concurrence.</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+    <h1 class="services-title">Services</h1>
+        <section id="services"> 
+    <section class="services full-width-section"> 
+        <div class="service">
+            <img src="images\call.png" alt="contact Icon">
+            <h2> centre d'appel <br>24/7</h2>
+        </div>
+        <div class="service">
+            <img src="images\marketing digitale.png" alt="Marketing Digitale Icon">
+            <h2>Marketing Digital</h2>
+   
+        </div>
+        <div class="service">
+            <img src="images\vente.png" alt="Vente Icon">
+            <h2>Vente</h2>
+        </div>
+        <div class="service">
+            <img src="images\création siteweb.png" alt="Création Siteweb Icon">
+            <h2>Création <br>Siteweb</h2>
+        </div>
+        <div class="service">
+            <img src="images\création de contenu.png" alt="Création de Contenu Icon">
+            <h2>Création <br>de Contenu</h2>
+            <br><br><br>
+        </div>
+        <div class="learn-more-container">
+            <a href="services.html" class="learn-more-button">Savoir plus</a>
+
+        </div>
+    </section>
+    <section id="connecte" class="full-width-section">
+        <div class="stay-connected-text">
+            <section id="contact">
+            <h2><span style="color: #EFB034;">R</span>ester <span style="color: #EFB034;">C</span>onnecté</h2>
+            </section>
+        </div>
+        <p>Nous serions ravis de connaître les objectifs de votre projet. Contactez-nous dès aujourd'hui pour une 
+            <br><br><span class="span">PROPOSITION PERSONNALISÉE GRATUITE !</span></p>
+    </section>
+    <section class="contact">
+        <div class="container">
+            <form id="contactForm" method="post" action="data.php">
+                <br>
+                <label for="fullname"></label>
+                <input type="text" id="fullname" name="fullname" required placeholder="Nom et Prénom">
+                
+                <label for="email"></label>
+                <input type="email" id="email" name="email" required placeholder="Email">
+                
+                <label for="phone"></label>
+                <input type="number" id="phone" name="phone" required placeholder="Numéro de téléphne ">
+                
+                <label for="company"></label>
+                <input type="text" id="company" name="company" placeholder="Nom de l'entreprise">
+                
+                <label for="message"></label>
+                <textarea id="message" name="message" placeholder="votre Message"></textarea>
+                
+                <p class="services-requested-title" style="margin-left: 1px;">Services demandés:</p>
+                <div class="services-requested">
+                    <div class="checkbox-column">
+                        <div>
+                            <input type="checkbox" id="social_media_strategy" name="services[]" value="Social Media Strategy">
+                            <label for="social_media_strategy">Stratégie de médias sociaux</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="influencer_marketing" name="services[]" value="Influencer Marketing">
+                            <label for="influencer_marketing">Marketing d'influence</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="social_media_management" name="services[]" value="Social Media Management">
+                            <label for="social_media_management">Gestion des médias sociaux</label>
+                        </div>
+                    </div>
+                    <div class="checkbox-column">
+                        <div>
+                            <input type="checkbox" id="website_design_development" name="services[]" value="Website Design and Development">
+                            <label for="website_design_development">Conception et développement de sites Web</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="content_production" name="services[]" value="Content Production">
+                            <label for="content_production">Production de contenu</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="community_management" name="services[]" value="Community Management">
+                            <label for="community_management">Gestionnaire de communauté</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <br><br><br>
+                <div class="button-container">
+                    <button type="submit" id="submmit">envoyer</button>
+                </div>
+                <br>
+            </form>
+        </div>
+    </section>
+    <div class="notification" id="notification">Les données ont été insérées avec succès.</div>
+    <br><br>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column-container">
+            <div class="footer-column">
+                <div class="footer-social-icons">
+                    <img src="images/Instagram 1.png" alt="Instagram Icon">
+                    <span>Attarwijagency</span>
+                </div>
+                <div class="footer-social-icons">
+                    <img src="images/Logo facebook 2.png" alt="Facebook Icon">
+                    <span>Attarwijagency</span>
+                </div>
+            </div>
+            <div class="footer-column">
+                <div class="footer-social-icons">
+                    <img src="images/Email 2.png" alt="Email Icon">
+                    <span>attarwijagency@gmail.com</span>
+                </div>
+                <div class="footer-social-icons">
+                    <img src="images/Phone call 1.png" alt="Phone Icon">
+                    <span>+212781456887</span>
+                </div>
+            </div>
+            </div>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Travail</a></li>
+                    <li><a href="#">Contactez-nous</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var form = this;
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form)
+            }).then(response => response.text())
+              .then(data => {
+                  if (data === 'success') {
+                      document.getElementById('notification').style.display = 'block';
+                      setTimeout(() => {
+                          document.getElementById('notification').style.display = 'none';
+                      }, 3000);
+                  } else {
+                      alert(data);
+                  }
+              });
+        });
+    </script>
+</div>
+    <div class="parent">    
+        <button id="init" >
+            <img src="images/chatbot.png" alt="Chat Icon">
+                bonjour comment je l'aider !
+        </button>
+    </div>
+    <div id="test" style="position: fixed;top: 4rem;right: 8rem;display: none;">
+        <div class="child" id="chatbot">
+            <div class="header">
+                <div class="h-child">
+                    <img src="images/chatbot (1).png" alt="avatar" id="avatar">
+                    <div>
+                        <span class="name">Chatbot</span>
+                        <br>
+                        <span style="color:rgb(218, 138, 18)">online</span>
+                    </div>
+                </div>
+                <div>
+                    <button class="refBtn"><i class="fa fa-refresh" onclick="initChat()"></i></button>
+                </div>
+            </div>
+
+            <div id="chat-box">
+
+            </div>
+            <div class="footer">
+                <span style="color: rgb(218, 138, 18);">powered by @Attarwij Agency </span>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

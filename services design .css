@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 2em;
+    background-color: #F0F8FF; /* Couleur de fond légère */
+    color:hsl(0, 0%, 0%); /* Couleur de texte par défaut */
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    width: 35px; /* Adjust the size of the logo as needed */
+    height: auto;
+    margin-right: 10px; /* Adjust the spacing between the logo and text */
+    padding-right:0px
+}
+header {
+    display:flex;
+    align-items: center;
+    justify-content:space-around;
+    background-color: #1eadea;
+    color: rgba(255, 255, 255, 0.916);
+    padding:0cm;
+    .orange {
+        color: orange;
+    }
+    
+    .blue {
+        color: blue;
+    }    
+}
+.brand-name{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+.search-form {
+    display: flex;
+    align-items:center;
+}
+
+.search-form input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color:hsl(0, 0%, 2%);
+    text-decoration: none;
+    font-weight: bold;
+}
+h1 {
+    text-align: center;
+    color: #292fdf; 
+    padding: 10px;
+}
+.service {
+    margin: 20px;
+    padding: 20px;
+    background-color: #FFFFFF; /* Fond blanc pour chaque service */
+    border-radius: 10px;
+    box-shadow: 0 0 10px hsl(232, 96%, 44%);
+}
+
+.service p {
+    margin: 5px 0;
+}
+.service ul {
+    list-style-type: none; /* Retire les puces de la liste */
+    padding: 0;
+}
+.service ul li {
+    background: #faa245;
+    color: #ffffffed;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}

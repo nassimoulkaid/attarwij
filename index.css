@@ -1,0 +1,441 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 35px; /* Adjust the size of the logo as needed */
+    height: auto;
+    margin-right: 10px; /* Adjust the spacing between the logo and text */
+    padding-right:0px
+}
+header {
+    display:flex;
+    align-items: center;
+    justify-content:space-around;
+    background-color: #1eadea;
+    color: rgba(255, 255, 255, 0.916);
+    padding:0cm;
+    .orange {
+        color: orange;
+    }
+    
+    .blue {
+        color: blue;
+    }    
+}
+.brand-name{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.background-container {
+    background-image: url('images/Image\ 13.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* 100% de la hauteur de la fenêtre */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .orange {
+        color: orange;
+    }
+    
+    .blue {
+        color: rgb(10, 181, 248);
+    }    
+    text-align: center;
+}
+.table-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Fond blanc avec opacité */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 20px; /* Espacement intérieur */
+    width: 50%; /* Largeur du conteneur */
+    max-width: 600px; /* Largeur maximale du conteneur */
+    margin: 20px auto; /* Centrage horizontal et espacement vertical */
+}
+.overlay {
+    background-color: rgba(255, 255, 255, 0.74); /* Fond blanc avec opacité pour transparence */
+    width: 80%; /* Ajustez la largeur de l'écran transparent */
+    height: 60%; /* Ajustez la hauteur de l'écran transparent */
+    display: flex;
+    flex-direction: column; /* Arrange les éléments verticalement */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px; /* Coins arrondis */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optionnel : ajout d'ombre pour l'effet de profondeur */
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+.orange {
+    color: orange;
+}
+
+.blue {
+    color: rgb(84, 196, 241);
+}
+
+p {
+    color: rgb(8, 8, 8); /* Couleur du texte du paragraphe */
+    font-size: 1.7em;
+}
+
+
+.background-container1 {
+    background-image: url('images/services2.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* 100% de la hauteur de la fenêtre */
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.background-container1 .content {
+    display: flex;
+    justify-content:space-around;
+    width: 100%;
+    align-items:center; /* Aligne le contenu au début verticalement */
+}
+h1{
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 20px;
+    height: 5vh;
+    color: rgb(8, 182, 251);
+}
+.background-container1 .text {
+    
+    width: 40%; /* Le paragraphe occupe 50% de la largeur de la section */
+    text-align:left;
+    padding-right: 650px; /* Espacement à droite */
+}
+
+.background-container1 .text p {
+    color: black; /* Couleur du texte du paragraphe */
+    font-size: 2em;
+    text-align:initial;
+    padding-right: 35px;
+}
+.search-form {
+    display: flex;
+    align-items:center;
+}
+
+.search-form input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: rgb(27, 26, 26);
+    text-decoration: none;
+    font-weight: bold;
+}
+form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #555;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.full-width-section {
+    width: 100%;
+    margin: 0;
+    padding: 50px 0;
+    background-size: cover;
+    background-position: center;
+}
+
+body h1 {
+    padding-top: 50px;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    text-align: center;
+    min-height: 70px;
+}
+
+.services-title {
+    font-family: 'Lexend', sans-serif;
+    font-size: 3em;
+    color: #15ABFF;
+}
+
+.services {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    padding: 50px 0;
+    border-radius: 10px;
+    background: url('images/backservices.png') no-repeat center center;
+    background-size: cover;
+}
+
+.service {
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    width: 200px;
+}
+
+.service img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.learn-more-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.learn-more-button {
+    background-color: transparent;
+    color: #15ABFF;
+    border: 2px solid #15ABFF;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.learn-more-button:hover {
+    background-color: #15ABFF;
+    color: #fff;
+}
+#connecte {
+    text-align: center;
+    color: #555;
+    padding: 1px 0;
+    border-radius: 10px;
+    background: url('imags\backgrounds/background-2.png') no-repeat center center;
+    background-size: cover;
+}
+
+.stay-connected-text {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.stay-connected-text h2 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 2em;
+    color: #15ABFF;
+}
+
+#connecte p {
+    color: #0267A0;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.contact {
+    background: #fff;
+    margin: 5px 150px;
+    border-radius: 10px;
+    padding: 0 150px;
+    background-color: #F0F9FF;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background: #50b3a2;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #45a090;
+}
+footer {
+    background: #4CBDFF;
+    color: #6D31ED;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    margin-left: 20px;
+}
+
+.footer-column-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 3rem;
+    gap: 2rem;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .7rem;
+}
+
+.footer-social-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-social-icons img {
+    width: 20px;
+    height: 20px;
+}
+
+.footer-nav{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -25%;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin-right: 40px;
+}
+
+.footer-nav ul li {
+    display: inline;
+    margin-right: 40px;
+}
+
+.footer-nav ul li a {
+    color: #424856;
+    text-decoration: none;
+    margin: 0;
+}
+
+.footer-nav ul li a:hover {
+    text-decoration: underline;
+}
+
+#submmit {
+    border-radius: 25px;
+    width: 100px;
+    height: 40px;
+    background-color: orange;
+    margin: 0 auto;
+    display: block;
+}
+
+.span {
+    color: #EFB034;
+    margin-top: 10px;
+}
+
+.services-requested-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.services-requested {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.checkbox-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    padding-right: 20px;
+}
+
+.checkbox-column div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.checkbox-column input[type="checkbox"] {
+    margin-right: 5px;
+}
+.footer-social-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
