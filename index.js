@@ -1,8 +1,10 @@
 document.getElementById("init").addEventListener("click", toggleChatBot);
+var iconchat = document.getElementById("init");
 var cbot = document.getElementById("chat-box");
 var chatContainer = document.getElementById('test');
 var body = document.getElementById("content"); // Select body
 
+var history = []; // Historique des options précédentes
 
 function toggleChatBot() {
     if (chatContainer.style.display === 'block') {
@@ -16,27 +18,22 @@ function openChat() {
     chatContainer.classList.remove('hide');
     chatContainer.classList.add('show');
     chatContainer.style.display = 'block';
-    document.getElementById('init').innerText = 'CLOSE CHAT';
     body.classList.add('blurred');  // Ajouter l'effet de flou au body
+    iconchat.classList.add('hide');
+    iconchat.classList.remove('show');
     initChat();
 }
 
 function closeChat() {
-    chatContainer.classList.remove('show');
-    chatContainer.classList.add('hide');
+    chatContainer.classList.add('show');
+    chatContainer.classList.remove('hide');
     setTimeout(() => {
+        iconchat.classList.remove('show');
+        iconchat.classList.add('hide');
         chatContainer.style.display = 'none';
         body.classList.remove('blurred');  // Retirer l'effet de flou du body
-        var spanElement = document.createElement('span');
-        spanElement.innerHTML = `
-            <img src="images/chatbot.png" alt="Chatbot Image" style="vertical-align: middle; margin-right: 10px;">
-            <span>bonjour comment je l'aider !</span>
-        `;
-        document.getElementById('init').innerHTML = '';
-        document.getElementById('init').appendChild(spanElement);
     }, 500);
 }
-
 
 var data = {
     chatinit: {
@@ -271,7 +268,7 @@ var len1 = data.chatinit.title.length;
 var j = 0;
 
 function initChat() {
-    
+    history = []; // Réinitialiser l'historique
     j = 0;
     cbot.innerHTML = '';
     for (var i = 0; i < len1; i++) {
@@ -304,7 +301,7 @@ function showOptions(options) {
 }
 
 function handleOpt() {
-    var str = this.innerText.toLowerCase().trim(); 
+    var str = this.innerText.toLowerCase().trim();
     document.querySelectorAll(".opt").forEach(el => {
         el.remove();
     });
@@ -315,8 +312,17 @@ function handleOpt() {
     cbot.appendChild(elm);
 
     if (str === 'retour') {
-        initChat();
+        if (history.length > 0) {
+            var prevOptions = history.pop();
+            handleResults(prevOptions.title, prevOptions.options);
+        } else {
+            initChat();
+        }
     } else if (data[str]) {
+        history.push({
+            title: Array.from(cbot.querySelectorAll('.msg')).map(el => el.innerHTML),
+            options: Array.from(cbot.querySelectorAll('.opt')).map(el => el.innerText)
+        });
         var tempObj = data[str];
         handleResults(tempObj.title, tempObj.options);
     } else {

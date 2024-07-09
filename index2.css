@@ -1,5 +1,5 @@
 #init {
-    background: rgb(15, 150, 190);
+    background:none;
     border: none;
     padding: 10px 20px;
     border-radius: 20px;
@@ -17,16 +17,12 @@
 }
 
 #init img {
-    width: 20px;
-    height: 20px;
+    width: 80px;
+    height: 80px;
     margin-right: 8px;
 }
 
-.desc p{
-    color: rgb(133,153,168);
-    margin: 0;
-    font-weight: 600;
-}
+
 
 .parent{
     position: relative;
@@ -53,7 +49,7 @@
     height: 35px;
     border-radius: 50%;
     margin: 0 0.5rem;
-    border: 1px solid rgb(195, 225, 230);
+    border: 1px solid rgb(255, 255, 255);
     padding: 5px;
 }
 .header{
@@ -81,14 +77,15 @@
 }
 .refBtn{
     position: absolute;
+    top: 7px;
     bottom: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    border-radius: 50%;
-    color: rgb(15, 132, 209);
-    font-size: 18px;
+    right: 0.1rem;
     cursor: pointer;
+    background-color: white;
+    
+}
+.refBtn:hover{
+    background-color:white;
 }
 .name{
     font-weight: 600;
@@ -198,13 +195,17 @@
     }
     to {
         opacity: 0;
-        transform: scale(0.5);
+        transform: scale(1.5);
     }
 }
 
 .show {
     animation: fadeIn 0.5s forwards;
 }
+.show2 {
+    animation: fadeIn 0.5s forwards;
+}
+
 
 .hide {
     animation: fadeOut 0.5s forwards;
@@ -223,4 +224,3 @@
     filter: blur(5px);
     pointer-events: none; 
 }
-
