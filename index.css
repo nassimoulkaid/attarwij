@@ -121,7 +121,7 @@ h1{
 
 .background-container1 .text p {
     color: black; /* Couleur du texte du paragraphe */
-    font-size: 2em;
+    font-size: 130%;
     text-align:initial;
     padding-right: 35px;
 }
