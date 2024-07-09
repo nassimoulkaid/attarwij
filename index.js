@@ -4,8 +4,6 @@ var cbot = document.getElementById("chat-box");
 var chatContainer = document.getElementById('test');
 var body = document.getElementById("content"); // Select body
 
-var history = []; // Historique des options précédentes
-
 function toggleChatBot() {
     if (chatContainer.style.display === 'block') {
         closeChat();
@@ -25,13 +23,15 @@ function openChat() {
 }
 
 function closeChat() {
+    
     chatContainer.classList.add('show');
     chatContainer.classList.remove('hide');
     setTimeout(() => {
-        iconchat.classList.remove('show');
-        iconchat.classList.add('hide');
+        iconchat.classList.remove('hide');
+        iconchat.classList.add('show');
         chatContainer.style.display = 'none';
         body.classList.remove('blurred');  // Retirer l'effet de flou du body
+
     }, 500);
 }
 
@@ -268,7 +268,7 @@ var len1 = data.chatinit.title.length;
 var j = 0;
 
 function initChat() {
-    history = []; // Réinitialiser l'historique
+    
     j = 0;
     cbot.innerHTML = '';
     for (var i = 0; i < len1; i++) {
@@ -301,7 +301,7 @@ function showOptions(options) {
 }
 
 function handleOpt() {
-    var str = this.innerText.toLowerCase().trim();
+    var str = this.innerText.toLowerCase().trim(); 
     document.querySelectorAll(".opt").forEach(el => {
         el.remove();
     });
@@ -312,17 +312,9 @@ function handleOpt() {
     cbot.appendChild(elm);
 
     if (str === 'retour') {
-        if (history.length > 0) {
-            var prevOptions = history.pop();
-            handleResults(prevOptions.title, prevOptions.options);
-        } else {
-            initChat();
-        }
+        
+        initChat();
     } else if (data[str]) {
-        history.push({
-            title: Array.from(cbot.querySelectorAll('.msg')).map(el => el.innerHTML),
-            options: Array.from(cbot.querySelectorAll('.opt')).map(el => el.innerText)
-        });
         var tempObj = data[str];
         handleResults(tempObj.title, tempObj.options);
     } else {
