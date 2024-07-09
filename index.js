@@ -4,6 +4,7 @@ var cbot = document.getElementById("chat-box");
 var chatContainer = document.getElementById('test');
 var body = document.getElementById("content"); // Select body
 
+
 function toggleChatBot() {
     if (chatContainer.style.display === 'block') {
         closeChat();
@@ -34,6 +35,7 @@ function closeChat() {
 
     }, 500);
 }
+
 
 var data = {
     chatinit: {
@@ -268,7 +270,6 @@ var len1 = data.chatinit.title.length;
 var j = 0;
 
 function initChat() {
-    
     j = 0;
     cbot.innerHTML = '';
     for (var i = 0; i < len1; i++) {
@@ -312,8 +313,7 @@ function handleOpt() {
     cbot.appendChild(elm);
 
     if (str === 'retour') {
-        
-        initChat();
+        showHelpOptions();  // Afficher le message d'aide directement
     } else if (data[str]) {
         var tempObj = data[str];
         handleResults(tempObj.title, tempObj.options);
@@ -345,4 +345,15 @@ function handleResults(title, options) {
 function handleScroll() {
     var elem = document.getElementById('chat-box');
     elem.scrollTop = elem.scrollHeight;
+}
+
+function showHelpOptions() {
+    var elm = document.createElement("p");
+    elm.innerHTML = "Comment puis-je vous aider maintenant ?";
+    elm.setAttribute("class", "msg");
+    cbot.appendChild(elm);
+    handleScroll();
+    setTimeout(function () {
+        showOptions(data.chatinit.options);
+    }, 500);
 }
