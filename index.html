@@ -47,7 +47,7 @@
                 <li><a href="#contact">Contactez-nous</a></li>
             </ul>
         </nav>
-        
+    
         <form class="search-form">
             <input type="text" placeholder="recherche...">
         </form>
@@ -236,7 +236,7 @@
         <img src="images/chatbot.png" alt="Chat Icon">
     </button>
 </div>
-<div id="test" style="position: fixed;top: 6rem;right: 6rem;display: none;">
+<div id="test" style="position: fixed;top: 24rem;right: 6rem;display: none;">
     <div class="child" id="chatbot">
         <div class="header">
             <div class="h-child">
@@ -260,6 +260,58 @@
         </div>
     </div>
 </div>
+<div class="notification" id="notification">Les données ont été insérées avec succès.</div>
     <script src="index.js"></script>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    (function(){
+        emailjs.init("EPd28LwFd56K9M84G"); // Remplacez par votre user_id EmailJS
+    })();
+    
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Empêche l'envoi par défaut du formulaire
+
+        var form = this;
+
+        // Collecte des données du formulaire
+        var formData = new FormData(form);
+
+        // Convertit les données FormData en objet JSON
+        var data = {};
+        formData.forEach(function(value, key){
+            data[key] = value;
+        });
+
+        // Collecte et formate les services sélectionnés
+        var services = [];
+        form.querySelectorAll('input[name="services[]"]:checked').forEach(function(checkbox) {
+            services.push(checkbox.nextElementSibling.textContent.trim());
+        });
+        data.services = services.length > 0 ? "Les services demandés sont : " + services.join(', ') : "Aucun service sélectionné";
+
+        // Envoie de l'e-mail via EmailJS
+        emailjs.send("service_r9kc6eb", "template_xv9au7h", data)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                // Affiche une notification ou effectue d'autres actions après l'envoi réussi
+                showNotification('Les données ont été insérées avec succès.');
+                form.reset(); // Réinitialise le formulaire après l'envoi réussi
+            }, function(error) {
+                console.log('FAILED...', error);
+                // Gère les erreurs en cas d'échec de l'envoi de l'e-mail
+                showNotification('Une erreur est survenue, veuillez réessayer.');
+            });
+    });
+
+    function showNotification(message) {
+        var notification = document.getElementById('notification');
+        notification.textContent = message;
+        notification.style.display = 'block';
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 3000);
+    }
+</script>
 </body>
 </html>
