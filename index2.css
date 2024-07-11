@@ -1,5 +1,5 @@
 #init {
-    background:none;
+    background: none;
     border: none;
     padding: 10px 20px;
     border-radius: 20px;
@@ -8,8 +8,8 @@
     color: aliceblue;
     cursor: pointer;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 3vh; /* 5% of the viewport height */
+    right: 3vw; /* 5% of the viewport width + 10px */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,9 +22,15 @@
     margin-right: 8px;
 }
 
+#test {
+    position: fixed;
+    bottom: 5vh; /* 5% of the viewport height */
+    right: 5vw; /* 5% of the viewport width + 10px */
+    display: none;
+    z-index: 1001;
+}
 
-
-.parent{
+.parent {
     position: relative;
     height: 100%;
     padding: 0 7rem;
@@ -32,11 +38,13 @@
     justify-content: space-between;
     align-items: center;
 }
-.bot-img{
+
+.bot-img {
     width: 20rem;
     height: 20rem;
 }
-.child{
+
+.child {
     box-shadow: 0 2px 2px rgb(114, 184, 250);
     border-radius: 15px;
     height: 30rem;
@@ -44,7 +52,8 @@
     margin: auto;
     background: white;
 }
-.header img{
+
+.header img {
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -52,7 +61,8 @@
     border: 1px solid rgb(255, 255, 255);
     padding: 5px;
 }
-.header{
+
+.header {
     position: absolute;
     top: 0;
     display: flex;
@@ -64,35 +74,39 @@
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
     z-index: 1;
-    box-shadow: 0 0 2px rgb(175,175,175);
+    box-shadow: 0 0 2px rgb(175, 175, 175);
 }
-.h-child{
+
+.h-child {
     display: flex;
     align-items: center;
 }
-.header span{
+
+.header span {
     font-size: 13px;
     margin: 0;
     padding: 0;
 }
-.refBtn{
+
+.refBtn {
     position: absolute;
     top: 7px;
-    bottom: 1rem;
     right: 0.1rem;
     cursor: pointer;
     background-color: white;
     border: none;
-    
 }
-.refBtn:hover{
-    background-color:white;
+
+.refBtn:hover {
+    background-color: white;
 }
-.name{
+
+.name {
     font-weight: 600;
     font-family: 'Courier New', Courier, monospace;
 }
-.footer{
+
+.footer {
     position: absolute;
     bottom: 0;
     width: 16rem;
@@ -103,20 +117,21 @@
     padding: 15px 0;
     text-align: center;
     font-size: 14px;
-    box-shadow: 0 0 3px rgb(153,153,153);
+    box-shadow: 0 0 3px rgb(153, 153, 153);
 }
-#chat-box{
+
+#chat-box {
     position: relative;
     top: 40px;
     padding: 8px 10px;
     font-size: 12px;
     height: 24.2rem;
     overflow: auto;
-    background: rgb(224,241,253);
+    background: rgb(224, 241, 253);
     text-align: center;
 }
 
-.msg{
+.msg {
     background: white;
     padding: 5px 15px;
     border-top-right-radius: 15px;
@@ -125,17 +140,19 @@
     width: max-content;
     font-size: 14px;
     color: rgb(37, 28, 168);
-    box-shadow: 0 0 5px rgb(226,226,226);
+    box-shadow: 0 0 5px rgb(226, 226, 226);
     max-width: 65%;
     text-align: left;
-    font-family: 'Pacifico', cursive; 
+    font-family: 'Pacifico', cursive;
 }
-.test{
+
+.test {
     text-align: right;
     margin: 20px 0;
 }
+
 .rep {
-    background: rgb(253,243,224);
+    background: rgb(253, 243, 224);
     color: rgb(29, 45, 134);
     padding: 5px 15px;
     border-top-right-radius: 15px;
@@ -144,11 +161,12 @@
     display: inline-block;
     word-wrap: break-word;
     font-size: 14px;
-    box-shadow: 0 0 5px rgb(211,211,211);
+    box-shadow: 0 0 5px rgb(211, 211, 211);
     max-width: 80%;
     font-family: 'Pacifico', cursive;
 }
-.opt{
+
+.opt {
     padding: 5px 20px;
     columns: lightsalmon;
     border: 1px solid blueviolet;
@@ -161,23 +179,26 @@
     text-align: center;
     font-size: 14px;
     color: rgb(43, 168, 226);
-    
 }
-.link{
+
+.link {
     text-decoration: none;
     display: block;
     text-align: center;
     color: aliceblue !important;
     background: blueviolet;
 }
-.m-link{
+
+.m-link {
     text-decoration: none;
 }
-.link:active{
+
+.link:active {
     background: white;
     border: 1px solid blueviolet;
     color: rgb(43, 168, 226);
 }
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -203,25 +224,20 @@
 .show {
     animation: fadeIn 0.5s forwards;
 }
+
 .show2 {
     animation: fadeIn 0.5s forwards;
 }
 
-
 .hide {
     animation: fadeOut 0.5s forwards;
-}
-
-#test {
-    display: none;
 }
 
 #test.show {
     display: block;
 }
 
-
 #content.blurred {
     filter: blur(5px);
-    pointer-events: none; 
+    pointer-events: none;
 }
