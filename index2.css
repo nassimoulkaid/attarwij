@@ -82,6 +82,7 @@
     right: 0.1rem;
     cursor: pointer;
     background-color: white;
+    border: none;
     
 }
 .refBtn:hover{
