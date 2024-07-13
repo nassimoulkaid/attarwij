@@ -321,6 +321,75 @@ button {
 button:hover {
     background: #45a090;
 }
+/* Responsive CSS */
+@media (max-width: 768px) {
+    .contact {
+        margin: 5px 20px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact {
+        margin: 5px 10px;
+        padding: 0 10px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .button-container {
+        text-align: center;
+    }
+    
+    button {
+        width: 100%;
+        padding: 10px;
+    }
+}
+/* Responsive CSS */
+@media (max-width: 1024px) {
+    .contact {
+        margin: 5px 50px;
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact {
+        margin: 5px 20px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact {
+        margin: 5px 10px;
+        padding: 0 10px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .button-container {
+        text-align: center;
+    }
+    
+    button {
+        width: 100%;
+        padding: 10px;
+    }
+}
 footer {
     background: #4CBDFF;
     color: #6D31ED;
@@ -367,7 +436,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: -25%;
+    margin-left: -7%;
 }
 
 .footer-nav ul {
@@ -438,4 +507,61 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 1rem;
+}
+/* Responsive CSS */
+@media (max-width: 1024px) {
+    .footer-content {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: 0;
+        padding: 0 20px;
+    }
+
+    .footer-column-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: 0;
+        padding: 0;
+        gap: 1rem;
+    }
+
+    .footer-nav {
+        margin-left: 0;
+    }
+
+    .footer-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-nav ul li {
+        margin: 10px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-column-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .footer-nav ul li {
+        margin: 10px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-column-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .footer-nav ul li {
+        margin: 5px 10px;
+    }
 }
