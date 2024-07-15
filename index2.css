@@ -1,3 +1,4 @@
+/* Initialisation du bouton */
 #init {
     background: none;
     border: none;
@@ -8,11 +9,11 @@
     color: aliceblue;
     cursor: pointer;
     position: fixed;
-    bottom: 3vh; /* 5% of the viewport height */
-    right: 3vw; /* 5% of the viewport width + 10px */
+    bottom: 3vh;
+    right: 3vw;
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Ensure it stays to the right */
+    justify-content: flex-end;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -22,28 +23,44 @@
     margin-right: 8px;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 600px) {
     #init {
-        padding: 5px 10px; /* Smaller padding for smaller screens */
-        font-size: 10px; /* Smaller font size for smaller screens */
-        bottom: 2vh; /* Adjusted position */
-        right: 2vw; /* Adjusted position */
+        padding: 8px 16px;
+        font-size: 10px;
+        bottom: 3vh;
+        right: 3vw;
     }
 
     #init img {
-        width: 60px; /* Smaller image size for smaller screens */
-        height: 60px; /* Smaller image size for smaller screens */
-        margin-right: 4px; /* Smaller margin for smaller screens */
+        width: 60px;
+        height: 60px;
+        margin-right: 4px;
     }
 }
+
+/* Conteneur du chatbot */
 #test {
     position: fixed;
-    bottom: 5vh; /* 5% of the viewport height */
-    right: 5vw; /* 5% of the viewport width + 10px */
+    bottom: 5vh;
+    right: 5vw;
     display: none;
     z-index: 1001;
+    max-width: 100%;
+    animation: simpleOpen 0.5s forwards;
 }
 
+@media (max-width: 480px) {
+    #test {
+        width: 90%;
+        max-width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 10vh;
+        animation: simpleOpen 0.5s forwards;
+    }
+}
+
+/* Conteneur parent */
 .parent {
     position: relative;
     height: 100%;
@@ -53,11 +70,7 @@
     align-items: center;
 }
 
-.bot-img {
-    width: 20rem;
-    height: 20rem;
-}
-
+/* Conteneur enfant */
 .child {
     box-shadow: 0 2px 2px rgb(114, 184, 250);
     border-radius: 15px;
@@ -67,6 +80,16 @@
     background: white;
 }
 
+@media (max-width: 600px) {
+    .child {
+        width: 57%;
+        height: 70vh;
+        top: 5vh;
+        right: 5vw;
+    }
+}
+
+/* En-tête du chatbot */
 .header img {
     width: 35px;
     height: 35px;
@@ -89,6 +112,12 @@
     border-top-left-radius: 15px;
     z-index: 1;
     box-shadow: 0 0 2px rgb(175, 175, 175);
+}
+
+@media (max-width: 600px) {
+    .header {
+        width: 57%;
+    }
 }
 
 .h-child {
@@ -120,6 +149,7 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
+/* Pied de page du chatbot */
 .footer {
     position: absolute;
     bottom: 0;
@@ -134,6 +164,13 @@
     box-shadow: 0 0 3px rgb(153, 153, 153);
 }
 
+@media (max-width: 600px) {
+    .footer {
+        width: 57%;
+    }
+}
+
+/* Boîte de chat */
 #chat-box {
     position: relative;
     top: 40px;
@@ -145,6 +182,13 @@
     text-align: center;
 }
 
+@media (max-width: 600px) {
+    #chat-box {
+        height: 56vh;
+    }
+}
+
+/* Message */
 .msg {
     background: white;
     padding: 5px 15px;
@@ -159,12 +203,17 @@
     text-align: left;
     font-family: 'Pacifico', cursive;
 }
-
-.test {
+.test{
     text-align: right;
     margin: 20px 0;
 }
+@media (max-width: 600px) {
+    .msg {
+        max-width: 65%;
+    }
+}
 
+/* Réponse */
 .rep {
     background: rgb(253, 243, 224);
     color: rgb(29, 45, 134);
@@ -180,6 +229,14 @@
     font-family: 'Pacifico', cursive;
 }
 
+@media (max-width: 600px) {
+    .rep {
+        max-width: 80%;
+        position: relative;
+    }
+}
+
+/* Options */
 .opt {
     padding: 5px 20px;
     columns: lightsalmon;
@@ -193,8 +250,20 @@
     text-align: center;
     font-size: 14px;
     color: rgb(43, 168, 226);
+    align-items: le;
 }
 
+@media (max-width: 600px) {
+    .opt {
+        padding: 5px 15px;
+        font-size: 12px;
+        margin-bottom: 12px;
+        
+
+    }
+}
+
+/* Liens */
 .link {
     text-decoration: none;
     display: block;
@@ -213,6 +282,7 @@
     color: rgb(43, 168, 226);
 }
 
+/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -231,7 +301,18 @@
     }
     to {
         opacity: 0;
-        transform: scale(1.5);
+        transform: scale(0.5);
+    }
+}
+
+@keyframes simpleOpen {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -251,7 +332,7 @@
     display: block;
 }
 
-#content.blurred {
+#content0.blurred {
     filter: blur(5px);
     pointer-events: none;
 }
