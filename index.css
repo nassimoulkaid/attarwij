@@ -880,17 +880,7 @@ footer {
 }
 
 .checkbox-column input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
     margin-right: 5px;
-}
-
-/* Adjust size for smaller screens */
-@media (max-width: 480px) {
-    .checkbox-column input[type="checkbox"] {
-        width: 16px;
-        height: 16px;
-    }
 }
 .footer-social-icons{
     display: flex;
