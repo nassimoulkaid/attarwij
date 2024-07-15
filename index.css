@@ -1,17 +1,155 @@
-/* styles.css */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
 body {
     font-family: Arial, sans-serif;
-    margin:0;
+    margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 .logo {
-    width: 35px; /* Adjust the size of the logo as needed */
+    width: 35px;
     height: auto;
-    margin-right: 10px; /* Adjust the spacing between the logo and text */
-    padding-right:0px
+    margin-right: 10px;
 }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1eadea;
+    color: #fff;
+    position: relative;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li a {
+    color: #010101;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #555;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.background-container {
+    background-image: url('images/Image 13.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    background-color: rgba(255, 255, 255, 0.74);
+    width: 80%;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.overlay h1 {
+    font-size: 2.5em;
+}
+
+.orange {
+    color: orange;
+}
+
+.blue {
+    color: rgb(84, 196, 241);
+}
+
+.overlay p {
+    color: rgb(8, 8, 8);
+    font-size: 1.7em;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        background-color: #cac9c989;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .search-bar {
+        display: none;
+    }
+
+    .search-icon {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: auto;
+        padding: 50px 20px;
+    }
+
+    .overlay h1 {
+        font-size: 1.2em;
+    }
+
+    .overlay p {
+        font-size: 0.9em;
+    }
+}
+
 header {
     display:flex;
     align-items: center;
@@ -27,27 +165,22 @@ header {
         color: blue;
     }    
 }
-.brand-name{
-    display:flex;
-    justify-content:center;
+.brand-name {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
 .background-container {
-    background-image: url('images/Image\ 13.png');
+    background-image: url('images/Image 13.png');
     background-size: cover;
     background-position: center;
-    height: 100vh; /* 100% de la hauteur de la fenêtre */
+    min-height: 100vh; /* Ensures the section covers the full viewport height */
     display: flex;
     justify-content: center;
     align-items: center;
-    .orange {
-        color: orange;
-    }
-    
-    .blue {
-        color: rgb(10, 181, 248);
-    }    
+    padding: 20px; /* Adds some padding to the section */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
     text-align: center;
 }
 .table-container {
@@ -59,21 +192,18 @@ header {
     margin: 20px auto; /* Centrage horizontal et espacement vertical */
 }
 .overlay {
-    background-color: rgba(255, 255, 255, 0.74); /* Fond blanc avec opacité pour transparence */
-    width: 80%; /* Ajustez la largeur de l'écran transparent */
-    height: 60%; /* Ajustez la hauteur de l'écran transparent */
-    display: flex;
-    flex-direction: column; /* Arrange les éléments verticalement */
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border-radius: 10px; /* Coins arrondis */
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optionnel : ajout d'ombre pour l'effet de profondeur */
+    background-color: rgba(255, 255, 255, 0.8); /* White background with some transparency */
+    width: 80%; /* Adjusts width for smaller screens */
+    max-width: 800px; /* Limits the maximum width for larger screens */
+    padding: 20px; /* Adds padding inside the overlay */
+    box-sizing: border-box; /* Includes padding in the element's total width and height */
+    border-radius: 10px; /* Rounded corners for a better look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds shadow for depth effect */
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 2.5em; /* Default font size for heading */
+    margin: 0; /* Removes default margin */
 }
 
 .orange {
@@ -85,25 +215,91 @@ h1 {
 }
 
 p {
-    color: rgb(8, 8, 8); /* Couleur du texte du paragraphe */
-    font-size: 1.7em;
+    color: rgb(8, 8, 8); /* Text color */
+    font-size: 1.5em; /* Default font size for text */
+    line-height: 1.6; /* Ensures good readability */
+    margin: 10px 0; /* Adds margin for spacing */
+}
+@media (max-width: 480px) {
+    .overlay {
+        width: 90%; /* Adjusts width for smaller screens */
+        padding: 10px; /* Reduces padding for smaller screens */
+    }
+
+    h1 {
+        font-size: 2em; /* Adjusts font size for smaller screens */
+    }
+
+    p {
+        font-size: 1.2em; /* Adjusts font size for smaller screens */
+        line-height: 1.4; /* Slightly tighter line spacing */
+    }
 }
 
+@media (min-width: 481px) and (max-width: 768px) {
+    .overlay {
+        width: 85%; /* Adjusts width for tablets */
+        padding: 15px; /* Adjusts padding for tablets */
+    }
 
+    h1 {
+        font-size: 2.2em; /* Adjusts font size for tablets */
+    }
+
+    p {
+        font-size: 1.4em; /* Adjusts font size for tablets */
+        line-height: 1.5; /* Ensures good readability */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .overlay {
+        width: 80%; /* Adjusts width for larger tablets */
+        padding: 20px; /* Adjusts padding for larger tablets */
+    }
+
+    h1 {
+        font-size: 2.4em; /* Adjusts font size for larger tablets */
+    }
+
+    p {
+        font-size: 1.6em; /* Adjusts font size for larger tablets */
+        line-height: 1.6; /* Ensures good readability */
+    }
+}
+
+@media (min-width: 1025px) {
+    .overlay {
+        width: 70%; /* Adjusts width for larger screens */
+    }
+
+    h1 {
+        font-size: 2.5em; /* Keeps the font size for larger screens */
+    }
+
+    p {
+        font-size: 1.7em; /* Keeps the font size for larger screens */
+        line-height: 1.6; /* Ensures good readability */
+    }
+}
 .background-container1 {
     background-image: url('images/services2.png');
     background-size: cover;
     background-position: center;
-    height: 100vh; /* 100% de la hauteur de la fenêtre */
+    min-height: 100vh; /* Ensures the section covers the full viewport height */
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
+    padding: 20px; /* Adds some padding to the section */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
 }
+
 .background-container1 .content {
-    display: flex;
-    justify-content:space-around;
     width: 100%;
-    align-items:center; /* Aligne le contenu au début verticalement */
+    max-width: 1200px; /* Limits the maximum width for larger screens */
+    padding: 20px; /* Adds padding inside the content container */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    text-align: center; /* Centers text on smaller screens */
 }
 h1{
     text-align: center;
@@ -113,17 +309,61 @@ h1{
     color: rgb(8, 182, 251);
 }
 .background-container1 .text {
-    
-    width: 40%; /* Le paragraphe occupe 50% de la largeur de la section */
-    text-align:left;
-    padding-right: 650px; /* Espacement à droite */
+    background-color: rgba(255, 255, 255, 0.8); /* White background with some transparency */
+    padding: 20px; /* Adds padding inside the text container */
+    border-radius: 10px; /* Rounded corners for a better look */
+    box-sizing: border-box; /* Includes padding in the element's total width and height */
 }
 
 .background-container1 .text p {
-    color: black; /* Couleur du texte du paragraphe */
-    font-size: 130%;
-    text-align:initial;
-    padding-right: 35px;
+    color: black; /* Text color */
+    font-size: 16px; /* Default font size for text */
+    line-height: 1.6; /* Ensures good readability */
+}
+
+@media (max-width: 480px) {
+    .background-container1 .text p {
+        font-size: 14px; /* Adjusts font size for smaller screens */
+        line-height: 1.4; /* Slightly tighter line spacing */
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .background-container1 .content {
+        padding: 20px; /* Ensures padding for tablets */
+    }
+
+    .background-container1 .text p {
+        font-size: 16px; /* Adjusts font size for tablets */
+        line-height: 1.6; /* Ensures good readability */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .background-container1 .content {
+        padding: 40px; /* Increases padding for larger tablets */
+    }
+
+    .background-container1 .text p {
+        font-size: 18px; /* Increases font size for larger tablets */
+        line-height: 1.8; /* Ensures good readability */
+    }
+}
+
+@media (min-width: 1025px) {
+    .background-container1 .content {
+        text-align: left; /* Left-aligns text for larger screens */
+    }
+
+    .background-container1 .text {
+        width: 40%; /* Sets text width to 40% for larger screens */
+        padding: 20px; /* Ensures consistent padding */
+    }
+
+    .background-container1 .text p {
+        font-size: 18px; /* Increases font size for larger screens */
+        line-height: 1.8; /* Ensures good readability */
+    }
 }
 .search-form {
     display: flex;
@@ -192,11 +432,12 @@ body h1 {
 }
 
 .container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+    width: 100%;
+    max-width: 1200px; /* Optional: set a maximum width for larger screens */
+    margin: 0 auto; /* Centers the container */
+    padding: 0 20px; /* Adds some padding on the sides */
+    box-sizing: border-box; /* Ensures padding is included in the width */
 }
-
 header {
     text-align: center;
     min-height: 70px;
@@ -210,8 +451,8 @@ header {
 
 .services {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: space-around;
     margin: 20px 0;
     padding: 50px 0;
     border-radius: 10px;
@@ -224,6 +465,8 @@ header {
     text-align: center;
     border-radius: 10px;
     width: 200px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
 }
 
 .service img {
@@ -258,12 +501,107 @@ header {
     background-color: #15ABFF;
     color: #fff;
 }
+
+/* Mobile view */
+@media (max-width: 480px) {
+    .services-title {
+        font-size: 2em; /* Adjusts font size for smaller screens */
+    }
+
+    .services {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px 10px; /* Adjusts padding for smaller screens */
+    }
+
+    .service {
+        width: 45%; /* Two services per row */
+        max-width: 150px; /* Limits the maximum width for smaller screens */
+        padding: 10px;
+    }
+
+    .service:nth-child(5) {
+        width: 100%; /* Full width for the last service */
+        max-width: 100%; /* Ensures it takes up the full width */
+        text-align: center; /* Centers the content */
+    }
+
+    .service img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .learn-more-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* Tablet view */
+@media (min-width: 481px) and (max-width: 768px) {
+    .services-title {
+        font-size: 2.5em; /* Adjusts font size for tablets */
+    }
+
+    .services {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 30px 20px; /* Adjusts padding for tablets */
+    }
+
+    .service {
+        width: 45%; /* Two services per row */
+        margin: 10px;
+    }
+
+    .service img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .learn-more-button {
+        font-size: 15px;
+        padding: 9px 18px;
+    }
+}
+
+/* Larger tablet view */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .services-title {
+        font-size: 2.8em; /* Adjusts font size for larger tablets */
+    }
+
+    .services {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 40px 30px; /* Adjusts padding for larger tablets */
+    }
+
+    .service {
+        width: 30%; /* Three services per row */
+        margin: 15px;
+    }
+
+    .service img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .learn-more-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
 #connecte {
     text-align: center;
     color: #555;
-    padding: 1px 0;
+    padding: 20px 0; /* Increased padding for better spacing */
     border-radius: 10px;
-    background: url('imags\backgrounds/background-2.png') no-repeat center center;
+    background: url('images/backgrounds/background-2.png') no-repeat center center;
     background-size: cover;
 }
 
@@ -282,7 +620,49 @@ header {
     color: #0267A0;
     display: inline-block;
     border-radius: 10px;
+    font-size: 1.2em;
+    margin: 10px 20px;
+    background: rgba(255, 255, 255, 0.8); /* Adding a white background with opacity */
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adding a shadow for depth */
 }
+
+/* Mobile view */
+@media (max-width: 480px) {
+    .stay-connected-text h2 {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
+
+    #connecte p {
+        font-size: 1em; /* Adjust font size for smaller screens */
+        margin: 10px; /* Adjust margin for smaller screens */
+    }
+}
+
+/* Tablet view */
+@media (min-width: 481px) and (max-width: 768px) {
+    .stay-connected-text h2 {
+        font-size: 1.8em; /* Adjust font size for tablets */
+    }
+
+    #connecte p {
+        font-size: 1.1em; /* Adjust font size for tablets */
+        margin: 10px 20px; /* Adjust margin for tablets */
+    }
+}
+
+/* Larger tablet view */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .stay-connected-text h2 {
+        font-size: 2em; /* Adjust font size for larger tablets */
+    }
+
+    #connecte p {
+        font-size: 1.2em; /* Adjust font size for larger tablets */
+        margin: 10px 20px; /* Adjust margin for larger tablets */
+    }
+}
+
 
 .contact {
     background: #fff;
@@ -541,7 +921,10 @@ footer {
         margin: 10px 20px;
     }
 }
-
+.test{
+    position: relative;
+    right: 13%;
+}
 @media (max-width: 768px) {
     .footer-column-container {
         flex-wrap: wrap;

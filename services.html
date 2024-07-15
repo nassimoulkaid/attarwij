@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/x-icon" href="images/WhatsApp Image 2024-07-09 at 14.13.03.jpeg">
-<link rel="stylesheet" href="services design .css">
+<link rel="stylesheet" href="services.css">
 <link rel="stylesheet" href="index2.css">
 <title>Nos Services</title>
 <style>
@@ -25,30 +25,30 @@
 </head>
 <body>
     <div id="content">
-    <header>
-        <div class="brand-name">  
-            <img src="images\WhatsApp Image 2024-06-13 at 17.16.02.jpeg" alt="Logo" class="logo">  
-            <div>
-                <span class="orange">A</span>
-                <span class="blue">TTARWIJ</span>  
-                <span class="orange">A</span>
-                <span class="blue">GENCY</span>
+        <header>
+            <div class="brand-name">  
+                <img src="images\WhatsApp Image 2024-06-13 at 17.16.02.jpeg" alt="Logo" class="logo">  
+                <div>
+                    <span class="orange">A</span>
+                    <span class="blue">TTARWIJ</span>  
+                    <span class="orange">A</span>
+                    <span class="blue">GENCY</span>
+                </div>
+                
             </div>
-            
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html" id="home">Accueil</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">Travail</a></li>
-                <li><a href="#contact">Contactez-nous</a></li>
-            </ul>
-        </nav>
-        
-        <form class="search-form">
-            <input type="text" placeholder="recherche...">
-        </form>
-    </header>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html" id="accueil">Accueil</a></li>
+                    <li><a href="index.html"id="services">Services</a></li>
+                    <li><a href="index.html" id="travail">Travail</a></li>
+                    <li><a href="index.html" id="contactez-nous">Contactez-nous</a></li>
+                </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Recherche...">
+            </div>
+                <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+            </nav>
+        </header>
 <h1>Nos Services</h1>
 
 <div class="service">
@@ -144,5 +144,17 @@
     </div>
 
 <script src="index.js"></script>
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.add("navcolor");
+        navLinks.classList.toggle('active');
+    }
+
+    function toggleSearch() {
+        const searchBar = document.querySelector('.search-bar input');
+        searchBar.classList.toggle('active');
+    }
+</script>
 </body>
 </html>
