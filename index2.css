@@ -12,7 +12,7 @@
     right: 3vw; /* 5% of the viewport width + 10px */
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end; /* Ensure it stays to the right */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -22,6 +22,20 @@
     margin-right: 8px;
 }
 
+@media (max-width: 390px) {
+    #init {
+        padding: 5px 10px; /* Smaller padding for smaller screens */
+        font-size: 10px; /* Smaller font size for smaller screens */
+        bottom: 2vh; /* Adjusted position */
+        right: 2vw; /* Adjusted position */
+    }
+
+    #init img {
+        width: 60px; /* Smaller image size for smaller screens */
+        height: 60px; /* Smaller image size for smaller screens */
+        margin-right: 4px; /* Smaller margin for smaller screens */
+    }
+}
 #test {
     position: fixed;
     bottom: 5vh; /* 5% of the viewport height */
