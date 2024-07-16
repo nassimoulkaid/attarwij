@@ -2,7 +2,7 @@ document.getElementById("init").addEventListener("click", toggleChatBot);
 var iconchat = document.getElementById("init");
 var cbot = document.getElementById("chat-box");
 var chatContainer = document.getElementById('test');
-var body = document.getElementById("content0"); // Select body
+var body = document.getElementById("content"); // Select body
 
 
 function toggleChatBot() {
@@ -272,26 +272,12 @@ var j = 0;
 function initChat() {
     j = 0;
     cbot.innerHTML = '';
-
-    // Check if the user is on a mobile device
-    if (window.innerWidth <= 600) {
-        // Directly display all messages and options
-        data.chatinit.title.forEach(function (title) {
-            var elm = document.createElement("p");
-            elm.innerHTML = title;
-            elm.setAttribute("class", "msg");
-            cbot.appendChild(elm);
-        });
-        showOptions(data.chatinit.options);
-    } else {
-        // Display messages with delay for non-mobile devices
-        for (var i = 0; i < len1; i++) {
-            setTimeout(handleChat, i * 500);
-        }
-        setTimeout(function () {
-            showOptions(data.chatinit.options);
-        }, (len1 + 1) * 500);
+    for (var i = 0; i < len1; i++) {
+        setTimeout(handleChat, i * 500);
     }
+    setTimeout(function () {
+        showOptions(data.chatinit.options);
+    }, (len1 + 1) * 500);
 }
 
 function handleChat() {
@@ -316,7 +302,7 @@ function showOptions(options) {
 }
 
 function handleOpt() {
-    var str = this.innerText.toLowerCase().trim();
+    var str = this.innerText.toLowerCase().trim(); 
     document.querySelectorAll(".opt").forEach(el => {
         el.remove();
     });
@@ -345,24 +331,15 @@ function handleDelay(title) {
 }
 
 function handleResults(title, options) {
-    // Check if the user is on a mobile device
-    if (window.innerWidth <= 600) {
-        // Directly display all titles and options for mobile
-        title.forEach(function (t) {
-            handleDelay(t);
-        });
-        showOptions(options);
-    } else {
-        // Display titles with delay for non-mobile devices
-        for (let i = 0; i < title.length; i++) {
-            setTimeout(function () {
-                handleDelay(title[i]);
-            }, i * 500);
-        }
+    for (let i = 0; i < title.length; i++) {
         setTimeout(function () {
-            showOptions(options);
-        }, title.length * 500);
+            handleDelay(title[i]);
+        }, i * 500);
     }
+
+    setTimeout(function () {
+        showOptions(options);
+    }, title.length * 500);
 }
 
 function handleScroll() {
@@ -380,10 +357,3 @@ function showHelpOptions() {
         showOptions(data.chatinit.options);
     }, 500);
 }
-
-// Ensure the chatbot adapts to different screen sizes
-window.addEventListener('resize', function () {
-    if (chatContainer.style.display === 'block') {
-        initChat();
-    }
-});

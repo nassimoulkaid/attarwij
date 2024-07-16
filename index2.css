@@ -1,66 +1,48 @@
-/* Initialisation du bouton */
 #init {
     background: none;
     border: none;
-    padding: 10px 20px;
+    padding: 0; /* Remove padding to make the button more compact */
     border-radius: 20px;
     font-size: 12px;
     font-weight: 500;
     color: aliceblue;
     cursor: pointer;
     position: fixed;
-    bottom: 3vh;
-    right: 3vw;
+    bottom: 3vh; /* 5% of the viewport height */
+    right: 3vw; /* 5% of the viewport width + 10px */
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: center; /* Center content within the button */
+    width: auto; /* Ensure the button only takes up the space of its content */
+    height: auto; /* Ensure the button only takes up the space of its content */
 }
 
 #init img {
     width: 80px;
     height: 80px;
-    margin-right: 8px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 390px) {
     #init {
-        padding: 8px 16px;
-        font-size: 10px;
-        bottom: 3vh;
-        right: 3vw;
+        padding: 0; /* Ensure no padding on smaller screens */
+        font-size: 10px; /* Smaller font size for smaller screens */
+        bottom: 2vh; /* Adjusted position */
+        right: 2vw; /* Adjusted position */
     }
 
     #init img {
-        width: 60px;
+        width: 60px; /* Smaller image size for smaller screens */
         height: 60px;
-        margin-right: 4px;
     }
 }
-
-/* Conteneur du chatbot */
 #test {
     position: fixed;
-    bottom: 5vh;
-    right: 5vw;
+    bottom: 5vh; /* 5% of the viewport height */
+    right: 5vw; /* 5% of the viewport width + 10px */
     display: none;
     z-index: 1001;
-    max-width: 100%;
-    animation: simpleOpen 0.5s forwards;
 }
 
-@media (max-width: 480px) {
-    #test {
-        width: 90%;
-        max-width: 90%;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 10vh;
-        animation: simpleOpen 0.5s forwards;
-    }
-}
-
-/* Conteneur parent */
 .parent {
     position: relative;
     height: 100%;
@@ -70,7 +52,11 @@
     align-items: center;
 }
 
-/* Conteneur enfant */
+.bot-img {
+    width: 20rem;
+    height: 20rem;
+}
+
 .child {
     box-shadow: 0 2px 2px rgb(114, 184, 250);
     border-radius: 15px;
@@ -80,16 +66,6 @@
     background: white;
 }
 
-@media (max-width: 600px) {
-    .child {
-        width: 57%;
-        height: 70vh;
-        top: 5vh;
-        right: 5vw;
-    }
-}
-
-/* En-tête du chatbot */
 .header img {
     width: 35px;
     height: 35px;
@@ -104,9 +80,10 @@
     top: 0;
     display: flex;
     align-items: center;
+    justify-content: space-between; /* This will push the refBtn to the right */
     border-bottom: 1px solid whitesmoke;
     background: rgb(255, 255, 255);
-    width: 16rem;
+    width: 100%;
     padding: 5px 0;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
@@ -114,15 +91,10 @@
     box-shadow: 0 0 2px rgb(175, 175, 175);
 }
 
-@media (max-width: 600px) {
-    .header {
-        width: 57%;
-    }
-}
-
 .h-child {
     display: flex;
     align-items: center;
+    margin-left: 10px; /* Add some margin to separate from the refBtn */
 }
 
 .header span {
@@ -132,24 +104,56 @@
 }
 
 .refBtn {
-    position: absolute;
-    top: 7px;
-    right: 0.1rem;
     cursor: pointer;
-    background-color: white;
+    background-color: transparent;
     border: none;
+    margin-right: 10px; /* Add some margin to separate from the edge */
+}
+
+.refBtn img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Adjustments for smaller screens (phones) */
+@media (max-width: 480px) {
+    .header {
+        padding: 4px 0; /* Slightly increase padding */
+    }
+
+    .header img {
+        width: 24px; /* Slightly increase image size */
+        height: 24px;
+    }
+
+    .refBtn img {
+        width: 16px; /* Slightly increase close button size */
+        height: 16px;
+    }
+
+    .name {
+        font-size: 12px; /* Slightly increase font size */
+    }
+
+    .h-child {
+        margin-left: 7px; /* Slightly increase margin */
+    }
+
+    .refBtn {
+        margin-right: 7px; /* Slightly increase margin */
+    }
 }
 
 .refBtn:hover {
     background-color: white;
 }
 
+
 .name {
     font-weight: 600;
     font-family: 'Courier New', Courier, monospace;
 }
 
-/* Pied de page du chatbot */
 .footer {
     position: absolute;
     bottom: 0;
@@ -164,13 +168,6 @@
     box-shadow: 0 0 3px rgb(153, 153, 153);
 }
 
-@media (max-width: 600px) {
-    .footer {
-        width: 57%;
-    }
-}
-
-/* Boîte de chat */
 #chat-box {
     position: relative;
     top: 40px;
@@ -182,13 +179,6 @@
     text-align: center;
 }
 
-@media (max-width: 600px) {
-    #chat-box {
-        height: 56vh;
-    }
-}
-
-/* Message */
 .msg {
     background: white;
     padding: 5px 15px;
@@ -203,17 +193,12 @@
     text-align: left;
     font-family: 'Pacifico', cursive;
 }
-.test{
+
+.test {
     text-align: right;
     margin: 20px 0;
 }
-@media (max-width: 600px) {
-    .msg {
-        max-width: 65%;
-    }
-}
 
-/* Réponse */
 .rep {
     background: rgb(253, 243, 224);
     color: rgb(29, 45, 134);
@@ -229,14 +214,6 @@
     font-family: 'Pacifico', cursive;
 }
 
-@media (max-width: 600px) {
-    .rep {
-        max-width: 80%;
-        position: relative;
-    }
-}
-
-/* Options */
 .opt {
     padding: 5px 20px;
     columns: lightsalmon;
@@ -250,20 +227,8 @@
     text-align: center;
     font-size: 14px;
     color: rgb(43, 168, 226);
-    align-items: le;
 }
 
-@media (max-width: 600px) {
-    .opt {
-        padding: 5px 15px;
-        font-size: 12px;
-        margin-bottom: 12px;
-        
-
-    }
-}
-
-/* Liens */
 .link {
     text-decoration: none;
     display: block;
@@ -282,7 +247,6 @@
     color: rgb(43, 168, 226);
 }
 
-/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -301,18 +265,7 @@
     }
     to {
         opacity: 0;
-        transform: scale(0.5);
-    }
-}
-
-@keyframes simpleOpen {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+        transform: scale(1.5);
     }
 }
 
@@ -332,7 +285,7 @@
     display: block;
 }
 
-#content0.blurred {
+#content.blurred {
     filter: blur(5px);
     pointer-events: none;
 }

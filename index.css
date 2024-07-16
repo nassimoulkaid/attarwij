@@ -921,7 +921,10 @@ footer {
         margin: 10px 20px;
     }
 }
-
+.test{
+    position: relative;
+    right: 13%;
+}
 @media (max-width: 768px) {
     .footer-column-container {
         flex-wrap: wrap;
