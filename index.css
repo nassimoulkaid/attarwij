@@ -284,7 +284,6 @@ p {
 }
 .background-container1 {
     background-image: url('images/services2.png');
-    background-size: cover;
     background-position: center;
     min-height: 100vh; /* Ensures the section covers the full viewport height */
     display: flex;
