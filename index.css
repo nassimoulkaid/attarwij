@@ -512,7 +512,7 @@ header {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
-        padding: 20px 10px; /* Adjusts padding for smaller screens */
+        
     }
 
     .service {
