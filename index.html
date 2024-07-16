@@ -115,65 +115,67 @@
                 <br><span class="span">PROPOSITION PERSONNALISÉE GRATUITE!</span></p>
         </section>
         
-    <section class="contact">
-        <div class="container">
-            <form id="contactForm" method="post" action="data.php">
-                <br>
-                <label for="fullname"></label>
-                <input type="text" id="fullname" name="fullname" required placeholder="Nom et Prénom">
-                
-                <label for="email"></label>
-                <input type="email" id="email" name="email" required placeholder="Email">
-                
-                <label for="phone"></label>
-                <input type="number" id="phone" name="phone" required placeholder="Numéro de téléphne ">
-                
-                <label for="company"></label>
-                <input type="text" id="company" name="company" placeholder="Nom de l'entreprise">
-                
-                <label for="message"></label>
-                <textarea id="message" name="message" placeholder="votre Message"></textarea>
-                
-                <p class="services-requested-title" style="margin-left: 1px;">Services demandés:</p>
-                <div class="services-requested">
-                    <div class="checkbox-column">
-                        <div>
-                            <input type="checkbox" id="social_media_strategy" name="services[]" value="Social Media Strategy">
-                            <label for="social_media_strategy">Stratégie de médias sociaux</label>
+        <section class="contact">
+            <div class="container">
+                <form id="contactForm" method="post" action="data.php">
+                    <br>
+                    <label for="fullname"></label>
+                    <input type="text" id="fullname" name="fullname" required placeholder="Nom et Prénom">
+                    
+                    <label for="email"></label>
+                    <input type="email" id="email" name="email" required placeholder="Email">
+                    
+                    <label for="phone"></label>
+                    <input type="number" id="phone" name="phone" required placeholder="Numéro de téléphne ">
+                    
+                    <label for="company"></label>
+                    <input type="text" id="company" name="company" placeholder="Nom de l'entreprise">
+                    
+                    <label for="message"></label>
+                    <textarea id="message" name="message" placeholder="votre Message"></textarea>
+                    
+                    <p class="services-requested-title" style="margin-left: 1px;">Services demandés:</p>
+                    <div class="services-requested">
+                        <div class="checkbox-column">
+                            <div class="custom-checkbox">
+                                <input type="checkbox" id="social_media_strategy" name="services[]" value="Social Media Strategy">
+                                <label for="social_media_strategy">Stratégie de médias sociaux</label>
+                            </div>
+                            <div class="custom-checkbox">
+                                <input type="checkbox" id="influencer_marketing" name="services[]" value="Influencer Marketing">
+                                <label for="influencer_marketing">Marketing d'influence</label>
+                            </div>
+                            <div class="custom-checkbox">
+                                <input type="checkbox" id="social_media_management" name="services[]" value="Social Media Management">
+                                <label for="social_media_management">Gestion des médias sociaux</label>
+                            </div>
                         </div>
-                        <div>
-                            <input type="checkbox" id="influencer_marketing" name="services[]" value="Influencer Marketing">
-                            <label for="influencer_marketing">Marketing d'influence</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="social_media_management" name="services[]" value="Social Media Management">
-                            <label for="social_media_management">Gestion des médias sociaux</label>
+                        <div class="checkbox-column">
+                            <div class="custom-checkbox">
+                                <input type="checkbox" id="website_design_development" name="services[]" value="Website Design and Development">
+                                <label for="website_design_development">Conception et développement de sites Web</label>
+                            </div>
+                            <div class="custom-checkbox">
+                                <input type="checkbox" id="content_production" name="services[]" value="Content Production">
+                                <label for="content_production">Production de contenu</label>
+                            </div>
+                            <div class="custom-checkbox">
+                                <input type="checkbox" id="community_management" name="services[]" value="Community Management">
+                                <label for="community_management">Gestionnaire de communauté</label>
+                            </div>
                         </div>
                     </div>
-                    <div class="checkbox-column">
-                        <div>
-                            <input type="checkbox" id="website_design_development" name="services[]" value="Website Design and Development">
-                            <label for="website_design_development">Conception et développement de sites Web</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="content_production" name="services[]" value="Content Production">
-                            <label for="content_production">Production de contenu</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="community_management" name="services[]" value="Community Management">
-                            <label for="community_management">Gestionnaire de communauté</label>
-                        </div>
+                    
+                    <br><br><br>
+                    <div class="button-container">
+                        <button type="submit" id="submmit">envoyer</button>
                     </div>
-                </div>
-                
-                <br><br><br>
-                <div class="button-container">
-                    <button type="submit" id="submmit">envoyer</button>
-                </div>
-                <br>
-            </form>
-        </div>
-    </section>
+                    <br>
+                </form>
+            </div>
+        </section>
+        
+        
     <div class="notification" id="notification">Les données ont été insérées avec succès.</div>
     <br><br>
     <footer>
