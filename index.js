@@ -357,3 +357,15 @@ function showHelpOptions() {
         showOptions(data.chatinit.options);
     }, 500);
 }
+
+//NavBar:
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            document.body.classList.remove('menu-mobile-open');
+            document.querySelector('.nav-links').classList.remove('active');
+        });
+    });
+});

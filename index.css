@@ -101,10 +101,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    body.menu-mobile-open {
-        overflow: hidden;
-    }
-
+    
     .nav-links {
         position: fixed;
         background-color: #fffffff2;
