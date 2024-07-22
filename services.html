@@ -25,7 +25,7 @@
 </head>
 <body>
     <div id="content">
-        <header>
+        <header id="header">
             <div class="brand-name">  
                 <img src="images\WhatsApp Image 2024-06-13 at 17.16.02.jpeg" alt="Logo" class="logo">  
                 <div>
@@ -47,6 +47,13 @@
                 <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
             </nav>
         </header>
+        <script>
+            // Ensure the page scrolls to the header on reload
+            window.onload = function() {
+                var header = document.getElementById('header');
+                header.scrollIntoView({behavior: 'smooth'});
+            };
+        </script>
 <h1>Nos Services</h1>
 
 <div class="service">
