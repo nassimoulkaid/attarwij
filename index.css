@@ -32,6 +32,15 @@ body {
     gap: 15px;
 }
 
+.nav-links a {
+    text-decoration: none; /* Remove default underline */
+    color: #010101; /* Set your desired color */
+    transition: text-decoration 0.3s; /* Smooth transition for the underline */
+}
+
+.nav-links a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
 .nav-links li a {
     color: #010101;
     text-decoration: none;
