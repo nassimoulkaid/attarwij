@@ -33,7 +33,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #2bb4f3;
     color: #fff;
     position: relative;
 }
@@ -54,6 +53,7 @@ header {
     color: #010101;
     text-decoration: none;
     padding: 5px 10px;
+    margin-right: 100px;
 }
 
 .search-bar {
