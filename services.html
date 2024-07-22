@@ -39,9 +39,7 @@
             <nav class="navbar">
                 <ul class="nav-links">
                     <li><a href="index.html" id="accueil">Accueil</a></li>
-                    <li><a href="index.html"id="services">Services</a></li>
-                    <li><a href="index.html" id="travail">Travail</a></li>
-                    <li><a href="index.html" id="contactez-nous">Contactez-nous</a></li>
+
                 </ul>
             <div class="search-bar">
                 <input type="text" placeholder="Recherche...">
@@ -146,10 +144,20 @@
 <script src="index.js"></script>
 <script>
     function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+    document.body.classList.toggle('no-scroll');
+}
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
         const navLinks = document.querySelector('.nav-links');
-        navLinks.classList.add("navcolor");
-        navLinks.classList.toggle('active');
-    }
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        }
+    });
+});
 
     function toggleSearch() {
         const searchBar = document.querySelector('.search-bar input');

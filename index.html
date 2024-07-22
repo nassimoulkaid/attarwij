@@ -207,9 +207,9 @@
             <nav class="footer-nav">
                 <ul>
                     <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Travail</a></li>
-                    <li><a href="#">Contactez-nous</a></li>
+                    <li><a href="#servicee">Services</a></li>
+                    <li><a href="#travail">Travail</a></li>
+                    <li><a href="#connecte">Contactez-nous</a></li>
                 </ul>
             </nav>
         </div>
@@ -326,10 +326,20 @@
 </script>
 <script>
     function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+    document.body.classList.toggle('no-scroll');
+}
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
         const navLinks = document.querySelector('.nav-links');
-        navLinks.classList.add("navcolor");
-        navLinks.classList.toggle('active');
-    }
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        }
+    });
+});
 
     function toggleSearch() {
         const searchBar = document.querySelector('.search-bar input');

@@ -47,6 +47,7 @@ header {
     list-style: none;
     display: flex;
     gap: 15px;
+    margin-right: 80px;
 }
 
 .nav-links li a {
@@ -84,6 +85,12 @@ header {
     display: none;
     font-size: 24px;
     cursor: pointer;
+}
+body.no-scroll {
+    overflow: hidden;
+    height: 100%;
+    position: fixed;
+    width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -142,6 +149,7 @@ header {
     display:flex;
     justify-content:center;
     align-items: center;
+    margin-right: 120px;
 }
 .search-form {
     display: flex;
