@@ -2,7 +2,8 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
+    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
 }
 body {
     font-family: Arial, sans-serif;
@@ -13,7 +14,7 @@ body {
 .logo {
     width: 35px;
     height: auto;
-    margin-right: 10px;
+    margin-left: 20px;
 }
 
 .navbar {
@@ -66,17 +67,6 @@ body {
     border-radius: 3px;
     cursor: pointer;
 }
-
-.background-container {
-    background-image: url('images/Image 13.png');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .overlay {
     background-color: rgba(255, 255, 255, 0.74);
     width: 80%;
@@ -92,6 +82,7 @@ body {
 
 .orange {
     color: orange;
+    margin-left: 5px;
 }
 
 .blue {
@@ -203,19 +194,47 @@ header {
     align-items: center;
     margin-left: -50px;
 }
-
 .background-container {
-    background-image: url('images/Image 13.png');
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh; /* Ensures the section covers the full viewport height */
+    position: relative; /* To position the overlay relative to this container */
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px; /* Adds some padding to the section */
-    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    padding: 20px;
+    box-sizing: border-box;
     text-align: center;
+    overflow: hidden; /* To ensure the video doesn't overflow */
 }
+
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Ensure the video is behind the content */
+    object-fit: cover; /* Ensures the video covers the whole area */
+}
+
+.overlay {
+    position: relative; /* To position this content above the video */
+    z-index: 1;
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+    #background-video {
+        width: 100vw;
+        height: auto;
+        min-height: 100%;
+        object-fit: cover;
+    }
+}
+
+
 .table-container {
     background-color: rgba(255, 255, 255, 0.8); /* Fond blanc avec opacité */
     border-radius: 10px; /* Coins arrondis */
@@ -475,13 +494,6 @@ header {
     text-align: center;
     min-height: 70px;
 }
-
-.services-title {
-    font-family: 'Lexend', sans-serif;
-    font-size: 3em;
-    color: #15ABFF;
-}
-
 .services {
     display: flex;
     flex-wrap: wrap;
@@ -534,101 +546,6 @@ header {
     background-color: #15ABFF;
     color: #fff;
 }
-
-/* Mobile view */
-@media (max-width: 480px) {
-    .services-title {
-        font-size: 2em; /* Adjusts font size for smaller screens */
-    }
-
-    .services {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        
-    }
-
-    .service {
-        width: 45%; /* Two services per row */
-        max-width: 150px; /* Limits the maximum width for smaller screens */
-        padding: 10px;
-    }
-
-    .service:nth-child(5) {
-        width: 100%; /* Full width for the last service */
-        max-width: 100%; /* Ensures it takes up the full width */
-        text-align: center; /* Centers the content */
-    }
-
-    .service img {
-        width: 80px;
-        height: 80px;
-    }
-
-    .learn-more-button {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-}
-
-/* Tablet view */
-@media (min-width: 481px) and (max-width: 768px) {
-    .services-title {
-        font-size: 2.5em; /* Adjusts font size for tablets */
-    }
-
-    .services {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 30px 20px; /* Adjusts padding for tablets */
-    }
-
-    .service {
-        width: 45%; /* Two services per row */
-        margin: 10px;
-    }
-
-    .service img {
-        width: 90px;
-        height: 90px;
-    }
-
-    .learn-more-button {
-        font-size: 15px;
-        padding: 9px 18px;
-    }
-}
-
-/* Larger tablet view */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .services-title {
-        font-size: 2.8em; /* Adjusts font size for larger tablets */
-    }
-
-    .services {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding: 40px 30px; /* Adjusts padding for larger tablets */
-    }
-
-    .service {
-        width: 30%; /* Three services per row */
-        margin: 15px;
-    }
-
-    .service img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .learn-more-button {
-        font-size: 16px;
-        padding: 10px 20px;
-    }
-}
-
 #connecte {
     text-align: center;
     color: #555;
@@ -1049,3 +966,165 @@ footer {
     align-items: center;
     gap: 1rem;
 }
+body {
+    background-color: #f4f4f4;
+}
+
+#servicee {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.services-title {
+    font-family: 'Lexend', sans-serif;
+    font-size: 3em;
+    color: #15ABFF;
+    margin-bottom: 20px;
+}
+
+.full-width-section {
+    width: 100%;
+    margin: 0;
+    padding: 50px 0;
+    background-size: cover;
+    background-position: center;
+    background: url('images/backservices.png') no-repeat center center;
+    background-size: cover;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.service {
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    width: 200px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: none; /* Remove background */
+}
+
+.service img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #ddd; /* Keep border */
+    background: #fff; /* Keep background */
+    padding: 10px;
+    box-sizing: border-box;
+    transition: transform 0.3s;
+}
+
+.service:hover img {
+    transform: rotate(360deg);
+}
+
+.learn-more-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.learn-more-button {
+    background-color: transparent;
+    color: #15ABFF;
+    border: 2px solid #15ABFF;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.learn-more-button:hover {
+    background-color: #15ABFF;
+    color: #fff;
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+    .services-title {
+        font-size: 2em;
+    }
+
+    .services {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: -17px;
+    }
+
+    .service {
+        width: 45%;
+        max-width: 200px;
+    }
+
+    .service:nth-child(5) {
+        width: 90%;
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .learn-more-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .services-title {
+        font-size: 2.5em;
+    }
+
+    .services {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .service {
+        width: 45%;
+        max-width: 200px;
+    }
+
+    .service:nth-child(5) {
+        width: 90%;
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .learn-more-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .services-title {
+        font-size: 2.8em;
+    }
+
+    .services {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .service {
+        width: 30%;
+        max-width: 300px;
+    }
+}
+
