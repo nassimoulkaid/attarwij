@@ -260,6 +260,7 @@ header {
     padding: 20px; /* Adds padding inside the overlay */
     box-sizing: border-box; /* Includes padding in the element's total width and height */
     border-radius: 10px; /* Rounded corners for a better look */
+    z-index: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds shadow for depth effect */
 }
 

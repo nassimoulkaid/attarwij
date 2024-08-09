@@ -24,6 +24,9 @@
             z-index: 1000;
         }
     </style>
+    
+        <link rel="stylesheet" href="styleBot.css">
+        <script src="scriptBot.js" defer></script>
 </head>
 <body >
     <div id="content">
@@ -246,34 +249,39 @@
         });
     </script>
 </div>
-<div class="parent">
-    <button id="init" >
-        <img src="images/chatbot.png" alt="Chat Icon">
+<div>
+    <button class="toggler" >
+        <span><img src="images/chatbot.png" alt="Chat Icon" style="width: 90px; height: 90px;"></span>
+        <span><img src="images/retirer.png" alt="close chat" style="width: 70px;height: 70px;background-color: #9b9b9b;border-radius: 50%;"></span>
     </button>
-</div>
-<div id="test">
-    <div class="child" id="chatbot">
-        <div class="header">
-            <div class="h-child">
-                <img src="images/chatbot (1).png" alt="avatar" id="avatar">
-                <div>
-                    <span class="name">Chatbot</span>
-                    <br>
-                    <span style="color:rgb(218, 138, 18)">online</span>
-                </div>
-            </div>
-            <div>
-                <button class="refBtn"  onclick="closeChat()"><img src="images/retirer.png" alt="" ></button>
+
+    <div class="chatBot">
+        <div class="Header2">
+            <img src="images/chatbot (1).png" style="width: 40px; height: 40px;">
+            <div class="disc">
+                <span class="Nome">Chatbot</span><br>
+                <span class="onlin" style="color:rgb(218, 138, 18)">online</span>
+                <span><img class="closing_mobile" src="images/retirer.png" alt="close chat" style="width: 30px;height: 30px; "></span>
             </div>
         </div>
+        
+        <!-- Options Container -->
+    <div class="chat-options">
+    </div>
 
-        <div id="chat-box">
-
-        </div>
-        <div class="footer">
-            <span style="color: rgb(218, 138, 18);">powered by @Attarwij Agency </span>
+        <ul class="chatBox" style="padding-top: 10px; margin-top: 0px; padding-bottom: 10px;height: 284px;">
+            <li class="chat incoming">
+                <span>🤖</span>
+                <p>Hi, Je suis m.Bot 👋<br>bienvenue chez <i style="color: #fbaf00;">ATTARWIJ  AGENCY</i></p>
+            </li>            
+        </ul>
+        <div class="chat-input">
+            <textarea placeholder="Enter your message..." ></textarea>
+            <input type="button" id="sentBtn" value="send">
+            <span id="power" style="color: rgb(218, 138, 18);">powered by @Attarwij Agency </span>
         </div>
     </div>
+
 </div>
 <div class="notification" id="notification">Les données ont été insérées avec succès.</div>
     <script src="index.js"></script>
